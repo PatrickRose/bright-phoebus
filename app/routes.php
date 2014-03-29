@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('/', array('as' => 'home', 'uses' => 'StaticPagesController@home'));
+Route::get('/', array('as' => 'home', 'uses' => 'StaticPagesController@index'));
 
 //function()
 //{

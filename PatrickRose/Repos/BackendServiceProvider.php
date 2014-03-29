@@ -11,7 +11,7 @@ class BackendServiceProvider extends ServiceProvider {
      */
     public function register()
     {
-        $this->app->bind('gigrepositoryinterface', function() {
+        $this->app->bindShared('PatrickRose\Repos\GigRepositoryInterface', function() {
             return new DBGigRepository();
         });
     }

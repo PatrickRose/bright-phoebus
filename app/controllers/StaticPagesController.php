@@ -1,5 +1,5 @@
 <?php
-use PatrickRose\Repos\GigRepositoryInterface as GigRepository;
+use PatrickRose\Repos\GigRepositoryInterface;
 
 /**
  * Created by PhpStorm.
@@ -11,16 +11,18 @@ use PatrickRose\Repos\GigRepositoryInterface as GigRepository;
 class StaticPagesController extends BaseController {
 
     /**
-     * @var GigRepository The gig repository
+     * @var GigRepositoryInterface The gig repository
      */
     private $repo;
 
     /**
-     * @param GigRepository $repository The repository we want to use
+     * @param GigRepositoryInterface $repository The repository we want to use
      */
-    public function __construct(GigRepository $repository) {
+    public function __construct(GigRepositoryInterface $repository) {
         $this->repo = $repository;
     }
 
-    public function test(){}
+    public function index(){
+        return View::make('staticpages.index');
+    }
 }
